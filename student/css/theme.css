@@ -1,0 +1,23 @@
+body{
+    background-color: #2D1340;
+}
+
+p,td,tr,th,h1,h2,h3 {
+    background-color: #2D1340;
+    color: lightyellow;
+}
+
+p:hover {
+    background-color: blueviolet;
+    color: yellow;
+}
+
+.menu-btn{
+    background-color: cornflowerblue;
+    color: aliceblue;
+}
+
+.menu-btn:hover{
+    background-color: lightblue;
+    color: white;
+}
