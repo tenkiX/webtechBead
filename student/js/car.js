@@ -7,7 +7,6 @@ function initCars() {
 		        type:'post',
 		        data:$('#carForm').serialize(),
 		        success:function(){
-		        	$('#carModal').css('display', 'none');
 		        	$("input[type=text], textarea").val("");
 		        	$("input[type=number], textarea").val("");
 		        	refreshCars();
