@@ -21,6 +21,7 @@ function initCars() {
 function refreshCars() {
 	
 	$.get('/manufacturerNames', function(names) {
+console.log(names);
         $("#manufacturerSelector").empty();
 		for(var man of names) {
             $('#manufacturerSelector').append('<option>' + man + "</option>");
