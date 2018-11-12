@@ -16,14 +16,21 @@ function initManufacturers() {
                 }
 		    });
 		});
+    $("#manufacturerHeading").animate({
+        opacity: '1',
+        height: '20px',
+    });
 }
 
 
 function refreshManufacturers() {
 	return $.get('/manufacturers', function(manufacturers) {
 		$("#manufacturerContainer").empty();
+        $("#manufacturerContainer").append("<tr><th>Gyártó</th><th>Ország</th><th>Alapítva</th></tr>");
 		for(var manufacturer of manufacturers) {
-            $("#manufacturerContainer").append("<p>" + manufacturer.name + "  " + manufacturer.country + "  " + manufacturer.founded +  "</p>");
+            $("#manufacturerContainer").append("<tr class='bordered-row'><td>" + manufacturer.name + "</td><td>" + manufacturer.country + "</td><td>" + (new Date(manufacturer.founded)).toLocaleDateString() +  "</td></tr>");
 		}
+		$("#manufacturerContainer").hide();
+        $("#manufacturerContainer").fadeIn("slow");
 	});
 }

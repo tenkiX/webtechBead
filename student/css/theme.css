@@ -2,19 +2,35 @@ body{
     background-color: #2C3E50;
 }
 
-p,td,tr,th,h1,h2,h3,table {
-    padding: 5px;
+p,td,tr,th,table {
+    padding: 6px;
     margin: auto;
     color: lightyellow;
-    align-content: center;
-    alignment: center;
-    align-self: center;
-    align-items: center;
+    text-align: left;
 }
+
+h1,h2,h3{
+    position:relative;
+    padding: 6px;
+    margin: auto;
+    color: lightyellow;
+    text-align: center;
+    height:0px;
+    opacity: 0;
+}
+
+button,input,select{
+    width:90%;
+    color: greenyellow;
+    background-color: #2C3E50;
+    border: 1px solid #44617c;
+}
+
 
 img{
     min-height: 30%;
     min-width: 30%;
+    width:90%;
 }
 
 p:hover {
@@ -23,9 +39,10 @@ p:hover {
 }
 
 .menu-btn{
-    background-color: cornflowerblue;
+    background-color: #44617c;
     color: aliceblue;
-    alignment: center;
+    width: 33%;
+    text-align: center;
 }
 
 .menu-tbl{
@@ -42,4 +59,14 @@ p:hover {
     width: 50%;
     border: 3px solid #34495E;
     padding: 10px;
+}
+
+.bordered{
+    border: 2px solid #34495E;
+
+}
+
+.bordered-row:hover{
+    background-color:  #34495E;
+    color: yellow;
 }

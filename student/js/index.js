@@ -1,10 +1,14 @@
 window.onload = function() {
   	jQuery(document).ready(function() {
         
-        $("#content").load("main.html");
+        $("#content").load("main.html", function(){
+            initMain();
+        });
 
         $("#mainButton").click(function() {
-            $("#content").load("main.html");
+            $("#content").load("main.html", function(){
+                initMain();
+            });
         });
 
         $("#carButton").click(function() {

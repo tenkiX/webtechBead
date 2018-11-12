@@ -1,26 +1,28 @@
     <div>
-        <h2>Autó hozzáadása</h2>
+        <h2 id="carHeading">Autó hozzáadása</h2>
             <form id="carForm">
                 <table>
                     <tr>
-                        <td>Név<input type="text" name="name" required id="name"/></td>
-                        <td>Fogyasztás<input type="text" required name="consumption" id="consumption"/></td>
+                        <td>Név</td><td><input type="text" name="name" required id="name"/></td>
+                        <td>Fogyasztás</td><td><input type="text" required name="consumption" id="consumption"/></td>
                     </tr>
                     <tr>
-                        <td>Szín<input type="text" required name="color" id="color"/></td>
-                        <td>Gyártó<select type="text" name="manufacturer" required id="manufacturerSelector"/></td>
+                        <td>Szín</td><td><input type="text" required name="color" id="color"/></td>
+                        <td>Gyártó</td><td><select type="text" name="manufacturer" required id="manufacturerSelector"/></td>
                     </tr>
                     <tr>
-                        <td>Elérhetőség<input type="number" required name="available" id="available"/></td>
-                        <td>Gyártási év<input type="number" required name="year" id="year"/></td>
+                        <td>Elérhetőség</td><td><input type="number" required name="available" id="available"/></td>
+                        <td>Gyártási év</td><td><input type="number" required name="year" id="year"/></td>
                     </tr>
                     <tr>
-                        <td>Lóerő<input type="number" required name="horsepower" id="horsepower"/></td>
-                        <td><button type="submit">Hozzáad</button></td>
+                        <td>Lóerő</td><td><input type="number" required name="horsepower" id="horsepower"/></td>
+                        <td></td><td><button type="submit">Hozzáad</button></td>
                     </tr>
                 </table>
             </form>
     </div>
 
-    <div id="carContainer">
+    <div>
+        <table  id="carContainer" class="bordered">
+        </table>
     </div>
