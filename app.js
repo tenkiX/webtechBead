@@ -1,4 +1,3 @@
-
 var express = require('express');
 var bodyParser = require("body-parser");
 var cookieParser = require('cookie-parser');
@@ -166,8 +165,8 @@ app.get('/manufacturers', function (req, res) {
 });
 app.get('/manufacturerNames', function (req, res) {
     var manufacturerNames = [];
-    for (var m of manufacturers) {
-        if (manufacturerNames.indexOf(m.name) == -1) {
+    for (let m of manufacturers) {
+        if (!manufacturerNames.includes(m.name)) {
             manufacturerNames.push(m.name);
         }
     }
@@ -191,7 +190,7 @@ app.get('/manufacturer', function (req, res) {
     }
 
     var manufacturerCars = [];
-    for (var car of cars) {
+    for (let car of cars) {
         if (req.cookies.name === car.manufacturer) {
             manufacturerCars.push(car);
         }
