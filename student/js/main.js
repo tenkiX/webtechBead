@@ -4,6 +4,5 @@ function initMain() {
         height: '20px',
     });
 
-    $("#mainDiv").hide();
     $("#mainDiv").fadeIn("slow");
 }

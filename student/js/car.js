@@ -16,7 +16,6 @@ function initCars() {
                 }
 		    });
 		});
-
     $("#carHeading").animate({
         opacity: '1',
         height: '20px',
@@ -24,7 +23,24 @@ function initCars() {
 
 }
 
+function getManufacturerData(manufacturerName){
+    document.cookie = "name=" + manufacturerName;
+    $.ajax({
+        url: '/manufacturer',
+        type: 'get',
+        success: function(data) {
+            var carList = '';
+            for(var car of data) {
+                carList += ("\n " + car.name);
+            }
+            alert("Ennek a gyártónak a modelljei: "+carList);
 
+        },
+        error: function(e) {
+            alert("Hiba az autók lekérdezésekor!");
+        }
+    });
+}
 
 function refreshCars() {
 	
@@ -39,9 +55,10 @@ function refreshCars() {
 		$("#carContainer").empty();
         $("#carContainer").append("<tr><th>Típus</th><th>Fogyasztás</th><th>Szín</th><th>Gyártó</th><th>Gyártási év</th><th>Darab</th><th>Lóerő</th></tr>");
 		for(var car of cars) {
-			$("#carContainer").append("<tr class='bordered-row'><td>" + car.name + "</td><td>" + car.consumption + "</td><td>" + car.color + "</td><td>" +car.manufacturer + "</td><td>" + car.year + "</td><td>" + car.available + "</td><td>" + car.horsepower + "</td></tr>");
+			$("#carContainer").append($("<tr class='bordered-row' att='" + car.manufacturer + "'><td>" + car.name + "</td><td>" + car.consumption + "</td><td>" + car.color + "</td><td>" +car.manufacturer + "</td><td>" + car.year + "</td><td>" + car.available + "</td><td>" + car.horsepower + "</td></tr>").click(function() {
+				getManufacturerData(this.getAttribute('att'));
+            }));
 		}
-        $("#carContainer").hide();
         $("#carContainer").fadeIn("slow");
 	});
 
