@@ -1,27 +1,21 @@
-window.onload = function() {
-  	jQuery(document).ready(function() {
-        
+jQuery(document).ready(function() {
         $("#content").load("main.html", function(){
             initMain();
         });
-
-        $("#mainButton").click(function() {
+        $("#mainBtn").click(function() {
             $("#content").load("main.html", function(){
                 initMain();
             });
         });
-
-        $("#carButton").click(function() {
-            $("#content").load("car.html", function(){
+        $("#carsBtn").click(function() {
+            $("#content").load("cars.html", function(){
                 initCars();            
             });
         });
-
-        $("#manufacturerButton").click(function() {
-            $("#content").load("manufacturer.html", function(){
+        $("#manufacturersBtn").click(function() {
+            $("#content").load("manufacturers.html", function(){
                 initManufacturers();            
             });
         });
+});
 
-	});
-};

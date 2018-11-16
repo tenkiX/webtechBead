@@ -1,11 +1,12 @@
 function initManufacturers() {
-  		refreshManufacturers();
-		$('#manufacturerForm').submit(function(e){
+  	refreshManufacturers();
+  	var $manufacturerForm = $('#manufacturerForm');
+    $manufacturerForm.submit(function(e){
 		    e.preventDefault();
 		    $.ajax({
 		        url:'/addManufacturers',
 		        type:'post',
-		        data:$('#manufacturerForm').serialize(),
+		        data:$manufacturerForm.serialize(),
 		        success:function(){
 		        	$("input[type=text], textarea").val("");
 		        	alert("Gyártó hozzáadva!");
@@ -25,12 +26,13 @@ function initManufacturers() {
 
 function refreshManufacturers() {
 	return $.get('/manufacturers', function(manufacturers) {
-		$("#manufacturerContainer").empty();
-        $("#manufacturerContainer").append("<tr><th>Gyártó</th><th>Ország</th><th>Alapítva</th></tr>");
+		var $manufacturerContainer = $("#manufacturerContainer");
+        $manufacturerContainer.empty();
+        $manufacturerContainer.append("<tr><th>Gyártó</th><th>Ország</th><th>Alapítva</th></tr>");
 		for(var manufacturer of manufacturers) {
-            $("#manufacturerContainer").append("<tr class='bordered-row'><td>" + manufacturer.name + "</td><td>" + manufacturer.country + "</td><td>" + (new Date(manufacturer.founded)).toLocaleDateString() +  "</td></tr>");
+            $manufacturerContainer.append("<tr class='bordered-row'><td>" + manufacturer.name + "</td><td>"
+                + manufacturer.country + "</td><td>" + (new Date(manufacturer.founded)).toLocaleDateString() +  "</td></tr>");
 		}
-		$("#manufacturerContainer").hide();
-        $("#manufacturerContainer").fadeIn("slow");
+        $manufacturerContainer.fadeIn("slow");
 	});
 }
